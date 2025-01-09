@@ -1,2 +1,2 @@
-# Par-progrmming
+# Pair-programming
 I'm Geraldo, and I'm student.
