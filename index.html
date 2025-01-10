@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História e Evolução dos Computadores</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            color: #fff;
+            margin: 0 0 15px 0;
+            font-size: 1.4em;
+        }
+
+        .card p {
+            color: #ddd;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Estilos para o modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            color: #333;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 15px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .close-button {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .modal-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .modal-content h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .modal-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .modal-content ul {
+            color: #666;
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .modal-content li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>História e Evolução dos Computadores</h1>
+        
+        <div class="grid">
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Abacus_6.png" alt="Ábaco" class="card-image">
+                <div class="card-content">
+                    <h3>3000 A.C. - Ábaco</h3>
+                    <p>Considerado o primeiro dispositivo de cálculo da humanidade, usado em diversas civilizações antigas.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Pascal_calculator_17th_century.jpg" alt="Máquina de Pascal" class="card-image">
+                <div class="card-content">
+                    <h3>1642 - Máquina de Pascal</h3>
+                    <p>Primeira calculadora mecânica funcional, criada por Blaise Pascal para auxiliar seu pai em cálculos tributários.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Analytical_Engine_%281%29.jpg" alt="Máquina Analítica" class="card-image">
+                <div class="card-content">
+                    <h3>1837 - Máquina Analítica</h3>
+                    <p>Projetada por Charles Babbage, é considerada o primeiro computador de uso geral programável da história.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/ENIAC_function_table_at_Aberdeen.jpg" alt="ENIAC" class="card-image">
+                <div class="card-content">
+                    <h3>1946 - ENIAC</h3>
+                    <p>Primeiro computador eletrônico digital de grande escala, pesava 30 toneladas e ocupava uma sala inteira.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Apple_I_Computer.jpg/1200px-Apple_I_Computer.jpg" alt="Apple I" class="card-image">
+                <div class="card-content">
+                    <h3>1976 - Apple I</h3>
+                    <p>Um dos primeiros computadores pessoais, criado por Steve Jobs e Steve Wozniak na garagem de casa.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/IBM_PC_5150.jpg" alt="IBM PC" class="card-image">
+                <div class="card-content">
+                    <h3>1981 - IBM PC</h3>
+                    <p>Estabeleceu o padrão para computadores pessoais e iniciou a era moderna da computação.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" alt="Computadores Modernos" class="card-image">
+                <div class="card-content">
+                    <h3>2000s - Era Digital</h3>
+                    <p>Computadores portáteis, smartphones e tablets revolucionam a forma como interagimos com a tecnologia.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485" alt="Computação Quântica" class="card-image">
+                <div class="card-content">
+                    <h3>Futuro - Computação Quântica</h3>
+                    <p>Nova fronteira da computação, prometendo resolver problemas complexos em segundos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modais com conteúdo detalhado -->
+    <div id="modal-abaco" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>3000 A.C. - O Ábaco</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Abacus_6.png" alt="Ábaco" class="modal-image">
+            <h3>História e Desenvolvimento</h3>
+            <p>O ábaco representa o primeiro passo da humanidade na computação. Surgiu na Babilônia por volta de 3000 A.C. e se espalhou por diversas civilizações, cada uma desenvolvendo sua própria versão.</p>
+            
+            <h3>Características Técnicas</h3>
+            <ul>
+                <li>Sistema decimal posicional</li>
+                <li>Capacidade de cálculos de até 7 dígitos</li>
+                <li>Operações: adição, subtração, multiplicação e divisão</li>
+                <li>Versões adaptadas para diferentes bases numéricas</li>
+            </ul>
+
+            <h3>Impacto Histórico</h3>
+            <p>O ábaco foi fundamental para:</p>
+            <ul>
+                <li>Desenvolvimento do comércio antigo</li>
+                <li>Evolução dos sistemas numéricos</li>
+                <li>Base para conceitos matemáticos modernos</li>
+                <li>Primeiro sistema de representação posicional</li>
+            </ul>
+
+            <h3>Legado</h3>
+            <p>Ainda hoje o ábaco é usado em partes da Ásia, sendo reconhecido pela UNESCO como patrimônio cultural imaterial.</p>
+        </div>
+    </div>
+
+    <div id="modal-pascal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>1642 - A Máquina de Pascal (Pascalina)</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Pascal_calculator_17th_century.jpg" alt="Pascalina" class="modal-image">
+            <h3>Inovação Mecânica</h3>
+            <p>Blaise Pascal criou a primeira calculadora mecânica funcional da história aos 19 anos para ajudar seu pai, um coletor de impostos.</p>
+            
+            <h3>Especificações Técnicas</h3>
+            <ul>
+                <li>Sistema de engrenagens interligadas</li>
+                <li>Capacidade de 8 dígitos</li>
+                <li>Operações: soma e subtração automáticas</li>
+                <li>Mecanismo de transporte de dezenas</li>
+                <li>Precisão mecânica revolucionária</li>
+            </ul>
+
+            <h3>Importância Histórica</h3>
+            <p>A Pascalina estabeleceu princípios fundamentais:</p>
+            <ul>
+                <li>Primeiro dispositivo calculador mecânico comercial</li>
+                <li>Base para futuras calculadoras mecânicas</li>
+                <li>Influenciou o desenvolvimento da computação moderna</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-analitica" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>1837 - A Máquina Analítica de Babbage</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Analytical_Engine_%281%29.jpg" alt="Máquina Analítica" class="modal-image">
+            <h3>O Primeiro Computador Programável</h3>
+            <p>Charles Babbage projetou a primeira máquina de computação de propósito geral, estabelecendo conceitos que usamos até hoje.</p>
+            
+            <h3>Características Revolucionárias</h3>
+            <ul>
+                <li>Unidade de Processamento (equivalente à CPU moderna)</li>
+                <li>Memória para 1000 números de 50 dígitos</li>
+                <li>Sistema de cartões perfurados para programação</li>
+                <li>Capacidade de tomar decisões condicionais</li>
+                <li>Impressora automática para resultados</li>
+            </ul>
+
+            <h3>Contribuição de Ada Lovelace</h3>
+            <p>Ada Lovelace, considerada a primeira programadora da história, desenvolveu o primeiro algoritmo para ser processado pela máquina.</p>
+        </div>
+    </div>
+
+    <div id="modal-eniac" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>1946 - ENIAC: O Primeiro Computador Eletrônico</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/ENIAC_function_table_at_Aberdeen.jpg" alt="ENIAC" class="modal-image">
+            <h3>História e Desenvolvimento</h3>
+            <p>O ENIAC (Electronic Numerical Integrator and Computer) foi desenvolvido durante a Segunda Guerra Mundial para cálculos balísticos. Foi o primeiro computador eletrônico de grande escala, totalmente programável.</p>
+            
+            <h3>Especificações Técnicas</h3>
+            <ul>
+                <li>17.468 válvulas eletrônicas</li>
+                <li>7.200 diodos de cristal</li>
+                <li>1.500 relés</li>
+                <li>70.000 resistores</li>
+                <li>10.000 capacitores</li>
+                <li>5.000 operações por segundo</li>
+                <li>Consumo: 150 kW de energia</li>
+                <li>Peso: 30 toneladas</li>
+                <li>Área ocupada: 167 m²</li>
+            </ul>
+
+            <h3>Programação e Operação</h3>
+            <p>A programação era feita através de cabos e chaves, podendo levar dias para configurar um novo programa. As principais programadoras foram seis mulheres, conhecidas como "ENIAC Girls".</p>
+
+            <h3>Legado</h3>
+            <ul>
+                <li>Provou a viabilidade da computação eletrônica</li>
+                <li>Estabeleceu bases para arquitetura de computadores</li>
+                <li>Inspirou o desenvolvimento de computadores mais eficientes</li>
+                <li>Marcou o início da era digital</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-apple1" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>1976 - Apple I: A Revolução Pessoal</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Apple_I_Computer.jpg/1200px-Apple_I_Computer.jpg" alt="Apple I" class="modal-image">
+            <h3>Origem e Desenvolvimento</h3>
+            <p>O Apple I foi criado por Steve Wozniak e Steve Jobs em 1976, na famosa garagem em Cupertino. Foi o primeiro produto da Apple Computer Company e marcou o início da revolução dos computadores pessoais.</p>
+
+            <h3>Especificações Técnicas</h3>
+            <ul>
+                <li>Processador MOS 6502 (1 MHz)</li>
+                <li>4 KB de RAM (expansível até 48 KB)</li>
+                <li>Interface para fita cassete</li>
+                <li>Saída de vídeo em texto (60 caracteres por linha)</li>
+                <li>Linguagem BASIC integrada</li>
+                <li>Preço original: US$ 666,66</li>
+                <li>Vendas totais: cerca de 200 unidades</li>
+                <li>Monitor e teclado vendidos separadamente</li>
+            </ul>
+
+            <h3>Características Únicas</h3>
+            <ul>
+                <li>Primeiro computador com teclado integrado</li>
+                <li>Design modular e expansível</li>
+                <li>Manual de montagem detalhado</li>
+                <li>Suporte para armazenamento em fita cassete</li>
+                <li>Interface de usuário baseada em texto</li>
+            </ul>
+
+            <h3>Impacto Histórico</h3>
+            <ul>
+                <li>Início da Apple Computer Company</li>
+                <li>Democratização da computação pessoal</li>
+                <li>Inspiração para toda uma geração de computadores</li>
+                <li>Estabeleceu padrões de design e usabilidade</li>
+                <li>Valor atual como item de colecionador: mais de US$ 500.000</li>
+            </ul>
+
+            <h3>Curiosidades</h3>
+            <p>O Apple I era vendido como um kit que precisava ser montado pelo usuário. Cada unidade era montada à mão por Steve Wozniak. O preço incomum de $666,66 foi escolhido porque Wozniak gostava de números repetidos.</p>
+        </div>
+    </div>
+
+    <div id="modal-ibmpc" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>1981 - IBM PC: O Padrão Mundial</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/IBM_PC_5150.jpg" alt="IBM PC" class="modal-image">
+            <h3>A Revolução dos PCs</h3>
+            <p>O IBM PC estabeleceu o padrão para computadores pessoais que persiste até hoje, criando toda uma indústria de compatíveis.</p>
+
+            <h3>Especificações Técnicas</h3>
+            <ul>
+                <li>Processador Intel 8088 (4.77 MHz)</li>
+                <li>16-256 KB de RAM</li>
+                <li>Drive de disquete de 5.25"</li>
+                <li>Sistema operacional PC-DOS (Microsoft)</li>
+                <li>Arquitetura aberta e expansível</li>
+                <li>Monitor monocromático ou colorido</li>
+            </ul>
+
+            <h3>Legado e Impacto</h3>
+            <ul>
+                <li>Criação do padrão IBM PC compatível</li>
+                <li>Surgimento do mercado de PCs clones</li>
+                <li>Estabelecimento do MS-DOS como SO padrão</li>
+                <li>Base para a computação moderna</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-moderno" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>2000s - Era Digital: A Revolução Contínua</h2>
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" alt="Computadores Modernos" class="modal-image">
+            <h3>Evolução Tecnológica</h3>
+            <p>A era digital trouxe avanços exponenciais em processamento, armazenamento e conectividade.</p>
+
+            <h3>Tecnologias Principais</h3>
+            <ul>
+                <li>Processadores multi-core e multi-thread</li>
+                <li>GPUs com capacidade de Ray Tracing</li>
+                <li>SSDs NVMe ultrarrápidos</li>
+                <li>Memória RAM DDR4/DDR5</li>
+                <li>Redes 5G e Wi-Fi 6</li>
+                <li>Cloud Computing</li>
+                <li>Inteligência Artificial e Machine Learning</li>
+            </ul>
+
+            <h3>Impacto Social</h3>
+            <ul>
+                <li>Transformação digital da sociedade</li>
+                <li>Revolução nas comunicações</li>
+                <li>Novas formas de trabalho e educação</li>
+                <li>Economia digital e criptomoedas</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-quantico" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Futuro - Computação Quântica</h2>
+            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485" alt="Computação Quântica" class="modal-image">
+            <h3>A Nova Fronteira</h3>
+            <p>A computação quântica promete revolucionar campos como criptografia, descoberta de medicamentos e simulações complexas.</p>
+
+            <h3>Conceitos Fundamentais</h3>
+            <ul>
+                <li>Qubits e superposição quântica</li>
+                <li>Emaranhamento quântico</li>
+                <li>Algoritmos quânticos</li>
+                <li>Correção de erros quânticos</li>
+            </ul>
+
+            <h3>Aplicações Potenciais</h3>
+            <ul>
+                <li>Otimização de processos complexos</li>
+                <li>Descoberta de novos materiais</li>
+                <li>Simulações moleculares</li>
+                <li>Criptografia pós-quântica</li>
+                <li>Machine Learning quântico</li>
+            </ul>
+
+            <h3>Desafios Atuais</h3>
+            <ul>
+                <li>Manutenção da coerência quântica</li>
+                <li>Escalabilidade dos sistemas</li>
+                <li>Redução de erros</li>
+                <li>Custos de desenvolvimento</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript para controlar os modais
+        document.querySelectorAll('.card').forEach((card, index) => {
+            card.addEventListener('click', () => {
+                const modalId = `modal-${getModalId(index)}`;
+                const modal = document.getElementById(modalId);
+                if (modal) modal.style.display = 'block';
+            });
+        });
+
+        document.querySelectorAll('.close-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.target.closest('.modal').style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                e.target.style.display = 'none';
+            }
+        });
+
+        function getModalId(index) {
+            const ids = ['abaco', 'pascal', 'analitica', 'eniac', 'apple1', 'ibmpc', 'moderno', 'quantico'];
+            return ids[index];
+        }
+    </script>
+</body>
+</html>
